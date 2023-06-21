@@ -1,0 +1,1 @@
+$ while read -r line;do echo -n $line|tr -d '\n';zm=$(ping -c 1 $line|head -n 1|cut -d "(" -f 2|cut -d ")" -f 1);echo -n ";";if [[ ${#zm} -lt 5 ]]; then echo "Name or service not known"; else echo $zm; fi;done < input_file.txt > results.txt
