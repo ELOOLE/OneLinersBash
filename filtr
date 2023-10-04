@@ -1,0 +1,16 @@
+## search email addr 
+grep -a -E -o "\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,6}\b" file|sort|uniq > file_su
+## find all files and search email address pattern
+find . -type f -exec cat {} +|grep -a -E -o "\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,6}\b"|sort|uniq > emails1
+
+## search in file file1 by pattern1 and sting len equal 33 characters
+while read -r line;do ile=$(echo $line|wc -c);if [ $ile -eq 33 ];then echo $line; fi; done < file1 > pattern1
+
+## compare to files by grep
+grep -v -Fwf patern11 all3 > all4  
+
+## from upper to lower
+cat all4 |tr [:upper:] [:lower:] > all5
+
+## sort file by string len
+awk '{ print length(), $0 | "sort -n" }'  emails2 > emails3
