@@ -1,0 +1,1 @@
+cd /usr/lib/dradis;bundle exec thor dradis:reset;chown dradis:dradis /usr/lib/dradis;chown dradis:dradis /usr/lib/dradis/* -R;chown dradis:dradis /var/lib/dradis;chown dradis:dradis /var/lib/dradis/* -R
